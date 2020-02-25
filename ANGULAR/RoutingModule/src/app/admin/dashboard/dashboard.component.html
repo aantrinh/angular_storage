@@ -1,0 +1,53 @@
+<div class="container">
+    <h3>Them Nguoi Dung</h3>
+    <form #addUserForm="ngForm" (ngSubmit)="addUser(addUserForm.value)">
+        <div class="form-group">
+            <span>Tài khoản</span>
+            <input class="form-control" #TaiKhoan="ngModel" name="TaiKhoan" ngModel required />
+            <!-- dang thao tac validation lay du lieu trong angular -->
+            <ng-container *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)">
+                <div *ngIf="TaiKhoan.errors.required" class="alert alert-danger">Tài Khoản Không Được Rỗng</div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <span>Mật khẩu</span>
+            <input type="password" #MatKhau="ngModel" minlength="6" maxlength="12" class="form-control" name="MatKhau" ngModel required/>
+            <ng-container *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+                <div *ngIf="MatKhau.errors.required" class="alert alert-danger">Mật Khẩu Không Được Rỗng</div>
+                <div *ngIf="MatKhau.errors.minlength || MatKhau.errors.maxlength" class="alert alert-danger"> 
+                    6-12 ky tu
+                </div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <span>Email</span>
+            <input
+             class="form-control" 
+             #Email="ngModel" 
+             name="Email" 
+             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+             ngModel required/>
+            <ng-container *ngIf="Email.errors && (Email.dirty || Email.touched)">
+                <div *ngIf="Email.errors.required" class="alert alert-danger">Email Không Được Rỗng</div>
+                <div *ngIf="Email.errors.pattern" class="alert alert-danger">Email chua dung dinh dang</div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <span>Họ tên</span>
+            <input class="form-control" #HoTen="ngModel" name="HoTen" ngModel  required/>
+            <ng-container *ngIf="HoTen.errors && (HoTen.dirty || HoTen.touched)">
+                <div *ngIf="HoTen.errors.required" class="alert alert-danger">Họ Tên Không Được Rỗng</div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <span>Số điện thoại</span>
+            <input class="form-control" #SoDT="ngModel" name="soDT" ngModel required/>
+            <ng-container *ngIf="SoDT.errors && (SoDT.dirty || SoDT.touched)">
+                <div *ngIf="SoDT.errors.required" class="alert alert-danger">Số Điện Thoại Không Được Rỗng</div>
+            </ng-container>
+        </div> 
+        <button type="submit" class="btn btn-success" [disabled]="!addUserForm.valid">
+            ADD USER
+        </button>
+    </form>
+</div>

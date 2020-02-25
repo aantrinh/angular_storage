@@ -1,0 +1,26 @@
+<div class="container">
+    <h3>Login</h3>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <div class="form-group">
+            <span>Tài khoản</span>
+            <input class="form-control" #TaiKhoan="ngModel" name="TaiKhoan" ngModel required />
+            <!-- dang thao tac validation lay du lieu trong angular -->
+            <ng-container *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)">
+                <div *ngIf="TaiKhoan.errors.required" class="alert alert-danger">Tài Khoản Không Được Rỗng</div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <span>Mật khẩu</span>
+            <input type="password" #MatKhau="ngModel" minlength="6" maxlength="12" class="form-control" name="MatKhau" ngModel required/>
+            <ng-container *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)">
+                <div *ngIf="MatKhau.errors.required" class="alert alert-danger">Mật Khẩu Không Được Rỗng</div>
+                <div *ngIf="MatKhau.errors.minlength || MatKhau.errors.maxlength" class="alert alert-danger"> 
+                    6-12 ky tu
+                </div>
+            </ng-container>
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">
+            Login
+        </button>
+    </form>
+</div>
