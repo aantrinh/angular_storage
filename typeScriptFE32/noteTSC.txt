@@ -1,0 +1,11 @@
+password: cybersoft@123
+
+tsc --init => tạo ra file tsconfig.json
+
+tsc -b =>  build từ file ts sang js
+
+tsc -w => nhận biết sự thay đổi và tự build lại khi save file .ts
+
+trong nhung phuong thuc cua propotype nen su dung  arrow function de khong lam thay doi ngu nghia cua phuong thuc
+
+firebase cua google
