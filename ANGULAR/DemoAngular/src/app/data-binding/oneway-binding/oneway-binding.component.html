@@ -1,0 +1,9 @@
+<h3 class="title">*Oneway-binding</h3>
+<p>
+    {{name}}
+</p>
+<div>
+    <input type="text" [value]="name" #thamso>
+</div>
+
+<button class="btn btn-danger" (click)="eventBinding(thamso)">Event Binding </button>

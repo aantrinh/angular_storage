@@ -1,0 +1,36 @@
+<h3>Interaction</h3>
+<app-danh-sach-phim></app-danh-sach-phim>
+
+<div class="container">
+    <h3>Thêm phim</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="usr">Mã phim:</label>
+                <input type="text" class="form-control" #maPhim>
+            </div>
+            <div class="form-group">
+                <label for="usr">Tên phim:</label>
+                <input type="text" class="form-control" #tenPhim>
+            </div>
+            <div class="form-group">
+                <label for="usr">Giá phim:</label>
+                <input type="text" class="form-control" #giaPhim>
+            </div>
+            <div class="form-group">
+                <label for="usr">Ảnh đại diện:</label>
+                <input type="text" class="form-control" #anhPhim>
+            </div>
+            <button class="btn btn-success" (click)="addMovie(maPhim.value, tenPhim.value, giaPhim.value, anhPhim.value)">Thêm phim</button>
+        </div>
+    </div>
+</div>
+
+<h4>DOM HTML</h4>
+<input type="text" #inputName>
+<button class="btn btn-info" (click)="domHTML()">DOM HTML</button>
+
+<br>
+<br>
+<br>
+<br>

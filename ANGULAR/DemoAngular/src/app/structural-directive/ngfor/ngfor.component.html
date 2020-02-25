@@ -1,0 +1,11 @@
+<h3 class="title">*ngfor</h3>
+<ng-container *ngIf="mangNhanVien">
+    <div *ngFor="let nhanVien of mangNhanVien; let stt = index">
+        {{stt +1}} - {{nhanVien.name}} - {{nhanVien.age}}
+    </div>
+</ng-container>
+
+<ng-container *ngTemplateOutlet="demoTemplate"></ng-container>
+<ng-template #demoTemplate>
+    <div>Demo ng-template</div>
+</ng-template>

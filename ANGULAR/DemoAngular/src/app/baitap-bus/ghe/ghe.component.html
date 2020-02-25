@@ -1,0 +1,8 @@
+<button class="btn ghe" 
+[ngClass]="{gheDaDat: ghe.TrangThai, gheDangChon: trangThaiGhe}"
+[disabled]="ghe.TrangThai"
+(click)="chonGhe()"
+>{{ghe.SoGhe}}</button>
+
+<!-- cach chon ghe 1 dong -->
+<!-- (click)="trangThaiGhe = !trangThaiGhe" -->

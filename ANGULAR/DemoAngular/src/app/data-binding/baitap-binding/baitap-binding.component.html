@@ -1,0 +1,12 @@
+<h2>Bai Tap</h2>
+<h2>Register form</h2>
+<div>
+    <h4>Email</h4>
+    <input type="text" [value]="email" [(ngModel)]="email">
+    <h4>FullName</h4>
+    <input type="text" [value]="name" #thamso>
+</div>
+<br> <br>
+<button class="btn btn-success" (click) = "submit(thamso.value)">Submit</button>
+<p>Email: {{email}} </p>
+<p>FullName: {{name}} </p>

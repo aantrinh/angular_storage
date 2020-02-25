@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    &__content{
+        width: 60%;
+    };
+    &__sidebar{
+        width: 40%;
+    }
+}

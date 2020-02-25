@@ -1,0 +1,10 @@
+<h3 class="title">*ngif</h3>
+<div *ngIf="status; else NoidungElse">cyberSoft</div>
+<ng-template #NoidungElse>Noi dung else</ng-template>
+<br>
+<br>
+<button class="btn btn-success" (click)="show()">SHOW</button>
+<button class="btn btn-danger" (click)="hide()">HIDE</button>
+<button class="btn btn-dark" (click)="toggle()">TOGGLE</button>
+
+
